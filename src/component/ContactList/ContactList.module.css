@@ -1,0 +1,19 @@
+.list {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.listItem {
+    display: block;
+    min-width: 300px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #434343;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
