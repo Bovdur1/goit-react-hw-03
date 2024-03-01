@@ -6,17 +6,19 @@ import css from './Contact.module.css';
 const Contact = ({ id, name, number, onDelete }) => {
   return (
     <>
+      {/* Розмітка даних контакта */}
       <div className={css.wrapper}>
         <div className={css.contactData}>
           <FaUser className={css.icon} />
           <p>{name}</p>
         </div>
-
         <div className={css.contactData}>
           <FaPhoneAlt className={css.icon} />
           <p>{number}</p>
         </div>
       </div>
+
+      {/* Кнопка видалення контакту */}
       <button
         type="button"
         onClick={() => onDelete(id)}

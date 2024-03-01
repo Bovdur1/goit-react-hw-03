@@ -41,6 +41,7 @@ const ContactForm = ({ onSubmit }) => {
       onSubmit={handleSubmit}
     >
       <Form className={css.form}>
+        {/* Поле для введення ім'я */}
         <div className={css.wrapper}>
           <label htmlFor={nameFieldId} className={css.label}>
             Name
@@ -54,6 +55,7 @@ const ContactForm = ({ onSubmit }) => {
           <ErrorMessage name="name" component="span" className={css.errorMsg} />
         </div>
 
+        {/* Поле для введення номеру */}
         <div className={css.wrapper}>
           <label htmlFor={numberFieldId} className={css.label}>
             Number
@@ -70,6 +72,7 @@ const ContactForm = ({ onSubmit }) => {
             className={css.errorMsg}
           />
         </div>
+
         <button type="submit" className={css.submitBtn}>
           Add contact
         </button>

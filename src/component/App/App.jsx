@@ -16,18 +16,19 @@ function App() {
   });
   const [filter, setFilter] = useState('');
 
-  const filterContacts = contacts.filter(
-    contact =>
-      contact.name.toLocaleLowerCase().includes(filter.toLowerCase().trim()) ||
-      contact.number.includes(filter.trim())
+  // Пошук контактів за ім'ям
+  const filterContacts = contacts.filter(contact =>
+    contact.name.toLocaleLowerCase().includes(filter.toLowerCase().trim())
   );
 
+  //Видалення контакту зі списку
   const onDelete = id => {
     setContacts(prevContacts =>
       prevContacts.filter(contact => contact.id !== id)
     );
   };
 
+  // Збереження списку контактів до локального сховища
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
