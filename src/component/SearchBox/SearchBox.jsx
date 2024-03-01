@@ -23,6 +23,7 @@ const SearchBox = ({ value, title, handleChange }) => {
 
 SearchBox.propTypes = {
   value: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 
