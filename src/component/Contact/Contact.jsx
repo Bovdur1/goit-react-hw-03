@@ -6,7 +6,7 @@ import css from './Contact.module.css';
 const Contact = ({ id, name, number, onDelete }) => {
   return (
     <>
-      {/* Розмітка даних контакта */}
+      {/* Розмітка даних контакту */}
       <div className={css.wrapper}>
         <div className={css.contactData}>
           <FaUser className={css.icon} />

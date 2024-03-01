@@ -6,10 +6,10 @@ import ContactForm from '../ContactForm/ContactForm';
 
 function App() {
   const [contacts, setContacts] = useState(() => {
-    const saveContacts = window.localStorage.getItem('contacts');
+    const savedContacts = window.localStorage.getItem('contacts');
 
-    if (saveContacts !== null) {
-      return JSON.parse(saveContacts);
+    if (savedContacts !== null) {
+      return JSON.parse(savedContacts);
     }
 
     return [];
@@ -18,7 +18,7 @@ function App() {
 
   // Пошук контактів за ім'ям
   const filterContacts = contacts.filter(contact =>
-    contact.name.toLocaleLowerCase().includes(filter.toLowerCase().trim())
+    contact.name.toLowerCase().includes(filter.toLowerCase().trim())
   );
 
   //Видалення контакту зі списку
@@ -37,7 +37,11 @@ function App() {
     <>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={setContacts} />
-      <SearchBox value={filter} handleChange={setFilter} />
+      <SearchBox
+        value={filter}
+        handleChange={setFilter}
+        title="Find contacts by name"
+      />
       <ContactList contacts={filterContacts} onDelete={onDelete} />
     </>
   );

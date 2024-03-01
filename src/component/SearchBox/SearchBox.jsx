@@ -1,14 +1,20 @@
 import PropTypes from 'prop-types';
 import css from './SearchBox.module.css';
+import { useId } from 'react';
 
-const SearchBox = ({ value, handleChange }) => {
+const SearchBox = ({ value, title, handleChange }) => {
+  const searchFieldId = useId();
+
   return (
     <>
-      <p className={css.title}>Find contacts by name</p>
+      <label htmlFor={searchFieldId} className={css.label}>
+        {title}
+      </label>
       <input
         type="text"
         value={value}
         onChange={e => handleChange(e.target.value)}
+        id={searchFieldId}
         className={css.search}
       />
     </>
